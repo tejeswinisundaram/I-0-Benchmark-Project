@@ -9,11 +9,11 @@ The following folder consists of the following files :
 
 1) lscpu.txt
 
-	*This txt file consists of the lscpu command on the Host Laptop. It provides details of the no of cores, threads, sockets, cache size  	           etc.
+This txt file consists of the lscpu command on the Host Laptop. It provides details of the no of cores, threads, sockets, cache size etc.
 
 2) lstopo.png
 
-	*This image is a screenhot of the graphical representation of the topology of the architecture.
+This image is a screenhot of the graphical representation of the topology of the architecture.
 
 3) The .txt files named 
 
