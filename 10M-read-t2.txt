@@ -1,0 +1,32 @@
+sudo fio --name=global --ioengine=posixaio --rw=read --size=10m --directory=/u01/fio --threads=2 --name=myReadWriteTest-Thread2
+myReadWriteTest-Thread2: (g=0): rw=read, bs=4K-4K/4K-4K/4K-4K, ioengine=posixaio, iodepth=1
+fio-2.1.3
+Starting 1 process
+myReadWriteTest-Thread2: Laying out IO file(s) (1 file(s) / 10MB)
+
+myReadWriteTest-Thread2: (groupid=0, jobs=1): err= 0: pid=10605: Wed Jul 29 18:06:36 2015
+  read : io=10240KB, bw=48995KB/s, iops=12248, runt=   209msec
+    slat (usec): min=2, max=254, avg= 6.80, stdev= 7.09
+    clat (usec): min=1, max=11195, avg=72.38, stdev=440.43
+     lat (usec): min=13, max=11449, avg=79.18, stdev=442.88
+    clat percentiles (usec):
+     |  1.00th=[   11],  5.00th=[   13], 10.00th=[   14], 20.00th=[   14],
+     | 30.00th=[   15], 40.00th=[   19], 50.00th=[   19], 60.00th=[   23],
+     | 70.00th=[   27], 80.00th=[   28], 90.00th=[   28], 95.00th=[   29],
+     | 99.00th=[ 2992], 99.50th=[ 3248], 99.90th=[ 4512], 99.95th=[ 4768],
+     | 99.99th=[11200]
+    lat (usec) : 2=0.08%, 20=52.03%, 50=44.14%, 100=1.52%, 250=0.59%
+    lat (usec) : 750=0.04%
+    lat (msec) : 2=0.23%, 4=1.17%, 10=0.16%, 20=0.04%
+  cpu          : usr=9.13%, sys=14.90%, ctx=2573, majf=0, minf=51
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=2560/w=0/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=10240KB, aggrb=48995KB/s, minb=48995KB/s, maxb=48995KB/s, mint=209msec, maxt=209msec
+
+Disk stats (read/write):
+  sda: ios=21/0, merge=0/0, ticks=132/0, in_queue=136, util=47.76%
+
