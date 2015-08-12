@@ -1,0 +1,30 @@
+tvio@tvio-VPCEE42FX:/u01/fio$ sudo fio --name=global --ioengine=posixaio --rw=read --size=1m --directory=/u01/fio --threads=1 --name=myReadWriteTest-Thread1 
+myReadWriteTest-Thread1: (g=0): rw=read, bs=4K-4K/4K-4K/4K-4K, ioengine=posixaio, iodepth=1
+fio-2.1.3
+Starting 1 process
+
+myReadWriteTest-Thread1: (groupid=0, jobs=1): err= 0: pid=3723: Wed Jul 29 12:08:41 2015
+  read : io=1024.0KB, bw=20898KB/s, iops=5224, runt=    49msec
+    slat (usec): min=7, max=237, avg=10.45, stdev=15.35
+    clat (usec): min=26, max=31449, avg=174.95, stdev=1970.14
+     lat (usec): min=35, max=31686, avg=185.41, stdev=1984.32
+    clat percentiles (usec):
+     |  1.00th=[   27],  5.00th=[   27], 10.00th=[   27], 20.00th=[   27],
+     | 30.00th=[   27], 40.00th=[   28], 50.00th=[   28], 60.00th=[   28],
+     | 70.00th=[   28], 80.00th=[   28], 90.00th=[   64], 95.00th=[  110],
+     | 99.00th=[ 1640], 99.50th=[ 2224], 99.90th=[31360], 99.95th=[31360],
+     | 99.99th=[31360]
+    lat (usec) : 50=89.45%, 100=3.91%, 250=5.08%, 750=0.39%
+    lat (msec) : 2=0.39%, 4=0.39%, 50=0.39%
+  cpu          : usr=6.25%, sys=10.42%, ctx=258, majf=0, minf=50
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=256/w=0/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=1024KB, aggrb=20897KB/s, minb=20897KB/s, maxb=20897KB/s, mint=49msec, maxt=49msec
+
+Disk stats (read/write):
+  sda: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
+
