@@ -1,0 +1,32 @@
+tvio@tvio-VPCEE42FX:~/Desktop/tifr/assignemnt$ sudo fio --name=global --ioengine=posixaio --rw=write --size=100m --directory=/u01/fio --threads=2 --name=myReadWriteTest-Thread2
+myReadWriteTest-Thread2: (g=0): rw=write, bs=4K-4K/4K-4K/4K-4K, ioengine=posixaio, iodepth=1
+fio-2.1.3
+Starting 1 process
+
+myReadWriteTest-Thread2: (groupid=0, jobs=1): err= 0: pid=10662: Wed Jul 29 18:08:59 2015
+  write: io=102400KB, bw=158269KB/s, iops=39567, runt=   647msec
+    slat (usec): min=2, max=309, avg= 4.40, stdev= 2.27
+    clat (usec): min=13, max=1081, avg=18.54, stdev=13.21
+     lat (usec): min=18, max=1085, avg=22.93, stdev=13.82
+    clat percentiles (usec):
+     |  1.00th=[   15],  5.00th=[   17], 10.00th=[   17], 20.00th=[   17],
+     | 30.00th=[   17], 40.00th=[   17], 50.00th=[   18], 60.00th=[   18],
+     | 70.00th=[   18], 80.00th=[   18], 90.00th=[   19], 95.00th=[   20],
+     | 99.00th=[   35], 99.50th=[   46], 99.90th=[  127], 99.95th=[  185],
+     | 99.99th=[  964]
+    bw (KB  /s): min=155144, max=155144, per=98.03%, avg=155144.00, stdev= 0.00
+    lat (usec) : 20=92.18%, 50=7.41%, 100=0.27%, 250=0.11%, 500=0.01%
+    lat (usec) : 750=0.01%, 1000=0.01%
+    lat (msec) : 2=0.01%
+  cpu          : usr=18.73%, sys=34.67%, ctx=25684, majf=0, minf=49
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=0/w=25600/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+  WRITE: io=102400KB, aggrb=158268KB/s, minb=158268KB/s, maxb=158268KB/s, mint=647msec, maxt=647msec
+
+Disk stats (read/write):
+  sda: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
+

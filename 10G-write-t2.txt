@@ -1,0 +1,33 @@
+tvio@tvio-VPCEE42FX:~/Desktop/tifr/assignemnt$ sudo fio --name=global --ioengine=posixaio --rw=write --size=10g --directory=/u01/fio --threads=2 --name=myReadWriteTest-Thread2
+myReadWriteTest-Thread2: (g=0): rw=write, bs=4K-4K/4K-4K/4K-4K, ioengine=posixaio, iodepth=1
+fio-2.1.3
+Starting 1 process
+Jobs: 1 (f=1): [W] [99.6% done] [0KB/28363KB/0KB /s] [0/7090/0 iops] [eta 00m:01s] 
+myReadWriteTest-Thread2: (groupid=0, jobs=1): err= 0: pid=10929: Wed Jul 29 18:28:01 2015
+  write: io=10240MB, bw=45376KB/s, iops=11344, runt=231086msec
+    slat (usec): min=1, max=7620, avg= 5.59, stdev=14.78
+    clat (usec): min=0, max=5778.4K, avg=80.85, stdev=9833.79
+     lat (usec): min=12, max=5778.4K, avg=86.44, stdev=9833.84
+    clat percentiles (usec):
+     |  1.00th=[   13],  5.00th=[   15], 10.00th=[   15], 20.00th=[   17],
+     | 30.00th=[   17], 40.00th=[   17], 50.00th=[   18], 60.00th=[   19],
+     | 70.00th=[   22], 80.00th=[   30], 90.00th=[   33], 95.00th=[   35],
+     | 99.00th=[  139], 99.50th=[  294], 99.90th=[ 5728], 99.95th=[ 6240],
+     | 99.99th=[ 9280]
+    bw (KB  /s): min=    1, max=169480, per=100.00%, avg=68679.54, stdev=44552.47
+    lat (usec) : 2=0.01%, 4=0.01%, 10=0.01%, 20=63.02%, 50=34.13%
+    lat (usec) : 100=0.79%, 250=1.50%, 500=0.13%, 750=0.04%, 1000=0.02%
+    lat (msec) : 2=0.03%, 4=0.02%, 10=0.30%, 20=0.01%, 50=0.01%
+    lat (msec) : 100=0.01%, 250=0.01%, 500=0.01%, 750=0.01%, 1000=0.01%
+    lat (msec) : 2000=0.01%, >=2000=0.01%
+  cpu          : usr=7.09%, sys=10.63%, ctx=2732814, majf=0, minf=50
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=0/w=2621440/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+  WRITE: io=10240MB, aggrb=45376KB/s, minb=45376KB/s, maxb=45376KB/s, mint=231086msec, maxt=231086msec
+
+Disk stats (read/write):
+  sda: ios=1167/18159, merge=30/376, ticks=1360180/31277436, in_queue=32777560, util=96.70%

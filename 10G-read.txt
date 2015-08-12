@@ -1,0 +1,34 @@
+sudo fio --name=global --ioengine=posixaio --rw=read --size=10g --directory=/u01/fio --threads=1 --name=myReadWriteTest-Thread1
+myReadWriteTest-Thread1: (g=0): rw=read, bs=4K-4K/4K-4K/4K-4K, ioengine=posixaio, iodepth=1
+fio-2.1.3
+Starting 1 process
+myReadWriteTest-Thread1: Laying out IO file(s) (1 file(s) / 10240MB)
+Jobs: 1 (f=1): [R] [100.0% done] [45824KB/0KB/0KB /s] [11.5K/0/0 iops] [eta 00m:00s]
+myReadWriteTest-Thread1: (groupid=0, jobs=1): err= 0: pid=10379: Wed Jul 29 17:55:49 2015
+  read : io=10240MB, bw=45586KB/s, iops=11396, runt=230023msec
+    slat (usec): min=1, max=5635, avg= 7.21, stdev= 8.37
+    clat (usec): min=0, max=134877, avg=78.18, stdev=626.95
+     lat (usec): min=9, max=134882, avg=85.39, stdev=627.03
+    clat percentiles (usec):
+     |  1.00th=[   11],  5.00th=[   13], 10.00th=[   14], 20.00th=[   18],
+     | 30.00th=[   19], 40.00th=[   19], 50.00th=[   19], 60.00th=[   23],
+     | 70.00th=[   27], 80.00th=[   28], 90.00th=[   28], 95.00th=[   57],
+     | 99.00th=[ 2736], 99.50th=[ 3728], 99.90th=[ 4768], 99.95th=[ 5024],
+     | 99.99th=[25984]
+    bw (KB  /s): min= 6233, max=51536, per=100.00%, avg=45671.03, stdev=8287.64
+    lat (usec) : 2=0.01%, 4=0.01%, 10=0.34%, 20=50.16%, 50=44.11%
+    lat (usec) : 100=1.80%, 250=2.00%, 500=0.04%, 750=0.01%, 1000=0.01%
+    lat (msec) : 2=0.10%, 4=1.00%, 10=0.40%, 20=0.01%, 50=0.01%
+    lat (msec) : 100=0.01%, 250=0.01%
+  cpu          : usr=9.87%, sys=14.77%, ctx=2810591, majf=0, minf=51
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=2621440/w=0/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=10240MB, aggrb=45585KB/s, minb=45585KB/s, maxb=45585KB/s, mint=230023msec, maxt=230023msec
+
+Disk stats (read/write):
+  sda: ios=41542/88, merge=51/328, ticks=432028/3056, in_queue=437764, util=99.81%
+

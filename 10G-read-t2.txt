@@ -1,0 +1,34 @@
+tvio@tvio-VPCEE42FX:~/Desktop/tifr/assignemnt$ sudo fio --name=global --ioengine=posixaio --rw=read --size=10g --directory=/u01/fio --threads=2 --name=myReadWriteTest-Thread2
+myReadWriteTest-Thread2: (g=0): rw=read, bs=4K-4K/4K-4K/4K-4K, ioengine=posixaio, iodepth=1
+fio-2.1.3
+Starting 1 process
+myReadWriteTest-Thread2: Laying out IO file(s) (1 file(s) / 10240MB)
+Jobs: 1 (f=1): [R] [100.0% done] [46197KB/0KB/0KB /s] [11.6K/0/0 iops] [eta 00m:00s]
+myReadWriteTest-Thread2: (groupid=0, jobs=1): err= 0: pid=10788: Wed Jul 29 18:20:19 2015
+  read : io=10240MB, bw=44328KB/s, iops=11081, runt=236550msec
+    slat (usec): min=1, max=8089, avg= 7.45, stdev= 9.93
+    clat (usec): min=0, max=151508, avg=80.42, stdev=667.78
+     lat (usec): min=9, max=151516, avg=87.87, stdev=667.88
+    clat percentiles (usec):
+     |  1.00th=[   11],  5.00th=[   13], 10.00th=[   14], 20.00th=[   18],
+     | 30.00th=[   18], 40.00th=[   19], 50.00th=[   19], 60.00th=[   23],
+     | 70.00th=[   27], 80.00th=[   27], 90.00th=[   28], 95.00th=[   57],
+     | 99.00th=[ 2960], 99.50th=[ 3952], 99.90th=[ 4832], 99.95th=[ 5216],
+     | 99.99th=[12608]
+    bw (KB  /s): min= 6699, max=49664, per=100.00%, avg=44418.21, stdev=6476.23
+    lat (usec) : 2=0.01%, 4=0.01%, 10=0.45%, 20=49.96%, 50=44.21%
+    lat (usec) : 100=1.93%, 250=1.80%, 500=0.06%, 750=0.02%, 1000=0.02%
+    lat (msec) : 2=0.09%, 4=0.98%, 10=0.46%, 20=0.01%, 50=0.01%
+    lat (msec) : 100=0.01%, 250=0.01%
+  cpu          : usr=9.88%, sys=14.66%, ctx=2653181, majf=0, minf=51
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=2621440/w=0/d=0, short=r=0/w=0/d=0
+
+Run status group 0 (all jobs):
+   READ: io=10240MB, aggrb=44327KB/s, minb=44327KB/s, maxb=44327KB/s, mint=236550msec, maxt=236550msec
+
+Disk stats (read/write):
+  sda: ios=41361/251, merge=99/453, ticks=511492/6044, in_queue=520880, util=99.82%
+
